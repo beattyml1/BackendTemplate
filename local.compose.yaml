@@ -1,0 +1,26 @@
+services:
+  web:
+    build: .
+    command:
+      - ./scripts/api.sh
+    ports:
+      - "8000:5000"
+  worker:
+    build: .
+    command:
+      - ./scripts/worker.sh
+    ports:
+      - "8000:5000"
+  redis:
+    image: "redis:alpine"
+  db:
+    image: supabase/postgres
+    ports:
+      - "5432:5432"
+    command: postgres -c config_file=/etc/postgresql/postgresql.conf
+    environment:
+      POSTGRES_PASSWORD: postgres
+  rabbitmq:
+    image: rabbitmq
+#  elasticsearch:
+#    image: elasticsearch
