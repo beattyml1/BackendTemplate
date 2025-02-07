@@ -32,6 +32,7 @@ aiohttp="^3.11.11"
 #pinecone-client = "^4.1.1" # Pinecone: Vector DB, serverless
 #pymongo = "^4.8.0" # Mongo DB: Dcoument DB, server
 #rabbitmq-client =  "^2.4.0" # Rabbit MQ, only if you need access beyond what celery provides or not using celery
+supabase = "^2.13.0"
 
 
 [tool.poetry.group.dev.dependencies]

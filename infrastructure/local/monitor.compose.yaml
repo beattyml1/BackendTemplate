@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    command: "/bin/bash /app/scripts/api.sh"
+    ports:
+      - "8000:8000"
+  worker:
+    build: .
+    command: "/bin/bash /app/scripts/flower.sh"
+    ports:
+      - "5555:5555"
