@@ -1,11 +1,11 @@
 services:
   web:
     build: .
-    command: "/bin/bash /app/scripts/api.sh"
+    command: "/bin/bash /app/scripts/run/api.sh"
     ports:
       - "8000:8000"
   worker:
     build: .
-    command: "/bin/bash /app/scripts/worker.sh"
+    command: "/bin/bash /app/scripts/run/worker.sh"
     ports:
       - "5555:5555"

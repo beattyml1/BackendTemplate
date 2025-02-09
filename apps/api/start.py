@@ -1,4 +1,6 @@
 from . import app
+import controllers
+import middleware
 
 @app.get("/")
 async def root():
