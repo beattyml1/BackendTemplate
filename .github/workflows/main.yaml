@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: "Install Poetry"
-        run: pip install poetry
+        run: pip install poetry && poetry config virtualenvs.create false
       - name: "Install tools"
         run: ./scripts/install/tools.sh
       - name: "Install packages"
