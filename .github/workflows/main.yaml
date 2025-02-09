@@ -10,13 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: "Install Poetry"
-        run: pip install poetry && poetry config virtualenvs.create false
+        run: pip install poetry
       - name: "Install tools"
         run: ./scripts/install/tools.sh
       - name: "Install packages"
         run: poetry install --with dev
       - name: "Unit Test"
-        run: pytest
+        run: poetry run pytest
       - name: "API Tests"
         run: ./scripts/test/test-http.sh
 
