@@ -1,0 +1,23 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # envrionment: Test  # Apparently GitHub doesn't have there shit together and you can't use environments with reusable actions like checkout which are needed for all build jobs, dumb
+    steps:
+      - uses: actions/checkout@v4
+      - name: "Install Poetry"
+        run: pip install poetry
+      - name: "Install tools"
+        run: ./scripts/install/tools.sh
+      - name: "Install packages"
+        run: poetry install
+      - name: "Unit Test"
+        run: pytest
+      - name: "API Tests"
+        run: ./scripts/test/test-http.sh
+
+
