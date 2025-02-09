@@ -14,7 +14,7 @@ jobs:
       - name: "Install tools"
         run: ./scripts/install/tools.sh
       - name: "Install packages"
-        run: poetry install
+        run: poetry install --with dev
       - name: "Unit Test"
         run: pytest
       - name: "API Tests"
