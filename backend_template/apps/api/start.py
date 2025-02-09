@@ -1,6 +1,6 @@
 from . import app
-import controllers
-import middleware
+import backend_template.controllers
+import backend_template.middleware
 
 @app.get("/")
 async def root():

@@ -1,2 +1,2 @@
 #!/bin/bash
-celery -A worker.start worker --loglevel=INFO
+celery -A backend_template.apps.worker.start worker --loglevel=INFO

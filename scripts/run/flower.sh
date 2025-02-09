@@ -1,2 +1,2 @@
 #!/bin/bash
-celery -A worker.start flower --loglevel=INFO
+celery -A backend_template.apps.worker.start flower --loglevel=INFO
