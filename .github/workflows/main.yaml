@@ -18,6 +18,6 @@ jobs:
       - name: "Unit Test"
         run: poetry run pytest
       - name: "API Tests"
-        run: ./scripts/test/test-http.sh
+        run: ./scripts/test/test-api.sh
 
 
